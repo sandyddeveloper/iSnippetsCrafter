@@ -1,4 +1,4 @@
-# iSinppetsCrafter
+# iSnippetsCrafter
 
 The **Code Snippet Manager with AI Features** is a web application designed for developers to store, organize, and retrieve their code snippets. Despite the mention of "AI features," the project does not involve any actual AI or machine learning models. Instead, it uses smart, predefined logic to offer features that give an AI-like experience.
 
