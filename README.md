@@ -87,3 +87,5 @@ This app allows developers to save their code snippets in various programming la
 - **Usability**: The auto-formatting and tag suggestion systems make managing code snippets user-friendly, even without AI.
 
 This project is a great combination of useful functionality, efficiency, and well-structured code organization, all without the need for complex AI models. 
+
+TODO LIST : https://app.eraser.io/workspace/Y8lE110QTD7EJdw1krhY?origin=share
