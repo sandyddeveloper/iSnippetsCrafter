@@ -88,5 +88,5 @@ This app allows developers to save their code snippets in various programming la
 
 This project is a great combination of useful functionality, efficiency, and well-structured code organization, all without the need for complex AI models. 
 
-TODO LIST : https://app.eraser.io/workspace/Y8lE110QTD7EJdw1krhY?origin=share
-DESING [FIGMA] : https://www.figma.com/design/lWOgxNnQ9N6CdAlixO8vp4/iSnippetsCrafter?node-id=0-1&t=20JQs74E0sJkXiw4-1
+TODO LIST : https://app.eraser.io/workspace/Y8lE110QTD7EJdw1krhY?origin=share |||
+DESIGN [FIGMA] : https://www.figma.com/design/lWOgxNnQ9N6CdAlixO8vp4/iSnippetsCrafter?node-id=0-1&t=20JQs74E0sJkXiw4-1
