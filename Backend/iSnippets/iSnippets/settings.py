@@ -75,10 +75,15 @@ WSGI_APPLICATION = 'iSnippets.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'isinppets_db',          # Database name
+        'USER': 'sandy',                 # MySQL username
+        'PASSWORD': 'sandy2508',         # MySQL password
+        'HOST': 'localhost',             # Host for MySQL (or 'db' if using Docker)
+        'PORT': '3306',                  # Default MySQL port
     }
 }
+
 
 
 # Password validation

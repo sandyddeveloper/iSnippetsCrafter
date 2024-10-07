@@ -3,7 +3,7 @@ version: '3'
 services:
   backend:
     build:
-      context: .
+      context: ./Backend/iSnippets
       dockerfile: Dockerfile
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
@@ -25,9 +25,12 @@ services:
   db:
     image: mysql:5.7
     environment:
-      MYSQL_DATABASE: snippetsdb
-      MYSQL_USER: root
-      MYSQL_PASSWORD: password
-      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: isinppets_db
+      MYSQL_USER: sandy
+      MYSQL_PASSWORD: sandy2508
+      MYSQL_ROOT_PASSWORD: root123
     ports:
-      - "3306:3306"
+      - "3307:3306"
+    volumes:
+      - ./db_data:/var/lib/mysql
+
