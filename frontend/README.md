@@ -1,5 +1,4 @@
 # STACKFOLIO
-
 ---
 
 ### **1. Dashboard Design**
