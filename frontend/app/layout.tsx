@@ -2,13 +2,12 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
 import "./globals.css";
-import { ThemeProvider } from "./provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Sandy's Portfolio",
-  description: "The Portfolio of Up-Coming Full Stack Dev",
+  title: "iSnippetsCrafters",
+  description: "Building Seamless Code Snippet Management for Developers",
 };
 
 export default function RootLayout({
@@ -21,16 +20,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/sr-logo.png" sizes="any" />
       </head>
-      <body className={inter.className}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
-      </body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }
