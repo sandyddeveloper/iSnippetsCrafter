@@ -1,13 +1,17 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Sidebar from "../components/Sidebar";
 import ContentArea from "../components/Navbar";
 import { ThemeProvider } from "../provider";
 
 const page = () => {
+  const [openSideBar, setOpenSideBar] = useState(false);
+
+  const toggleSideBar = () => setOpenSideBar(!openSideBar);
   return (
     <div className="flex ">
       <ThemeProvider>
-        <Sidebar />
+      <Sidebar  />
         <div className="content  w-[100%] dark:bg-gray-900 text-black dark:text-white transition-colors duration-300">
           <ContentArea />
         </div>
