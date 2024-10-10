@@ -1,33 +1,19 @@
-"use client";
-import { useState } from "react";
-import Header from "../components/Dashboard/Header";
-import Sidebar from "../components/Dashboard/Sidebar";
-import SnippetStats from "../components/Dashboard/SnippetStats";
-import RecentActivity from "../components/Dashboard/RecentActivity";
-import QuickActions from "../components/Dashboard/QuickActions";
+import React from "react";
+import Sidebar from "../components/Sidebar";
+import ContentArea from "../components/Navbar";
+import { ThemeProvider } from "../provider";
 
-const DashboardPage: React.FC = () => {
-  const [sidebarOpen, setSidebarOpen] = useState<boolean>();
-
-  //Toggle setup
-  const toggleSidebar = () => {
-    setSidebarOpen(!sidebarOpen);
-  };
+const page = () => {
   return (
-    <div className="flex-1 ">
-      <Header toggleSidebar={toggleSidebar} />
-      <div className="flex">
+    <div className="flex ">
+      <ThemeProvider>
         <Sidebar />
-        <main className="p-4 space-y-6 lg:ml-64">
-          <SnippetStats />
-          <div className="flex justify-between">
-            <RecentActivity />
-            <QuickActions />
-          </div>
-        </main>
-      </div>
+        <div className="content  w-[100%] dark:bg-gray-900 text-black dark:text-white transition-colors duration-300">
+          <ContentArea />
+        </div>
+      </ThemeProvider>
     </div>
   );
 };
 
-export default DashboardPage;
+export default page;

@@ -1,14 +1,7 @@
-"use client";
-
 import HomePage from "./components/Home";
 
-
-const Home = () => {
-  return (
-    <>
-    <HomePage />
-    </>
-  );
-};
-
-export default Home;
+export default function Home() {
+  return <div className="poppins">
+    <HomePage/>
+  </div>
+}

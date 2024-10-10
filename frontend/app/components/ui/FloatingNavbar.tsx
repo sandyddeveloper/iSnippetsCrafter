@@ -1,4 +1,5 @@
 import React from "react";
+import Logo from "../Logo";
 
 const Navbar: React.FC = () => {
   return (
@@ -11,7 +12,7 @@ const Navbar: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           <div className="text-4xl font-bold text-white">
-            <a href="/">iSnippetsCrafter</a>
+            <Logo />
           </div>
 
           <div className="hidden md:flex space-x-8 pt-2">

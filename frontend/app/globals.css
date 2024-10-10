@@ -45,7 +45,7 @@ html::-webkit-scrollbar {
     --radius: 0.5rem;
   }
 
-  .dark {
+  .homeDark {
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
 
@@ -74,6 +74,10 @@ html::-webkit-scrollbar {
     --input: 240 3.7% 15.9%;
     --ring: 240 4.9% 83.9%;
   }
+  .dark{
+    --background: grey;
+    --foreground:  grey ;
+  }
 }
 
 @layer base {
@@ -92,4 +96,11 @@ html::-webkit-scrollbar {
   .heading {
     @apply font-bold text-4xl md:text-5xl text-center;
   }
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+body {
+  color : rgb(var(--font-poppins)),
 }

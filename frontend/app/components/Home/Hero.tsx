@@ -49,7 +49,7 @@ const Hero = () => {
             Hey! iSnippetsCrafter is designed to empower developers by providing an efficient and organized way to manage code snippets across multiple programming languages.
           </p>
 
-          <a href="#about">
+          <a href="/dashboard">
             <MagicButton
               title="Get Started"
               icon={<FaLocationArrow />}
