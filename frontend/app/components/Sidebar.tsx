@@ -6,7 +6,7 @@ import { languages, navItems } from "../lib/data";
 export default function Sidebar() {
   return (
     <div 
-      className={`max-md:hidden pr-10 p-6 flex flex-col gap-2 h-screen pt-7 dark:bg-black z-50 transition-transform transform`}>
+      className={`max-md:hidden pr-10 p-6 flex flex-col gap-2  h-full pt-7 dark:bg-black z-50 transition-transform transform`}>
    
         <Logo/>
         <QuickLinks />
@@ -76,7 +76,7 @@ function Languages() {
   const [activeLanguage, setActiveLanguage] = useState<string>("Javascript");
 
   return (
-    <div className="mt-6 text-sm">
+    <div className="mt-6 text-sm dark:bg-black">
       <div className="text-slate-400 font-extrabold dark:text-slate-300">
         Languages
       </div>
