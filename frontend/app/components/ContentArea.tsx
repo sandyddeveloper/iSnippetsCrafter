@@ -8,6 +8,7 @@ import {
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { useEffect, useState } from "react";
+import LikeButton from "./ui/LikeButton";
 
 export default function TagArea() {
   const [isSlideOpen, setIsSlideOpen] = useState(false);
@@ -107,7 +108,8 @@ function NoteHeader({
       >
         idhu verum Heading kaga dha
       </span>
-      <FavoriteBorderIcon className="text-slate-400 cursor-pointer" />
+      {/* <FavoriteBorderIcon className="text-slate-400 cursor-pointer" /> */}
+      <LikeButton />
     </div>
   );
 }
