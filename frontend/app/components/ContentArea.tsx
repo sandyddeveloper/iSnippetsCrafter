@@ -10,39 +10,79 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 import { useEffect, useState } from "react";
 
 export default function TagArea() {
+  const [isSlideOpen, setIsSlideOpen] = useState(false);
+
+  // Toggle function for opening/closing the sliding section
+  const toggleSlideSection = () => {
+    setIsSlideOpen(!isSlideOpen);
+  };
+
   return (
-    <div className="mt-5">
-      <SwiperSelection />
-      <AllNotesSection />
+    <div className="flex transition-all duration-500">
+      {/* Dashboard Section */}
+      <div
+        className={`transition-all duration-500 ${
+          isSlideOpen ? "w-1/2" : "w-full"
+        }`}
+      >
+        <div className="mt-5">
+          <SwiperSelection />
+          <AllNotesSection toggleSlideSection={toggleSlideSection} />
+        </div>
+      </div>
+
+      {/* Sliding Section */}
+      {isSlideOpen && (
+        <div className="fixed top-0 right-0 h-full w-1/2 bg-gray-200 shadow-lg p-4 transition-transform transform translate-x-0 z-50">
+          <button
+            className="bg-red-500 text-white px-4 py-2 rounded-md"
+            onClick={toggleSlideSection}
+          >
+            Close
+          </button>
+          <div className="p-8">
+            <h2 className="text-2xl font-bold mb-4">Sliding Section Content</h2>
+            <p>This is where you can put your content.</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
 
-function AllNotesSection() {
+function AllNotesSection({
+  toggleSlideSection,
+}: {
+  toggleSlideSection: () => void;
+}) {
   return (
     <div className="mt-5 flex flex-wrap gap-4 dark:bg-gray-800 p-3 transition-colors duration-300">
-      <SingleNote />
-      <SingleNote />
-      <SingleNote />
-      <SingleNote />
-      <SingleNote />
+      <SingleNote toggleSlideSection={toggleSlideSection} />
+      <SingleNote toggleSlideSection={toggleSlideSection} />
+      <SingleNote toggleSlideSection={toggleSlideSection} />
+      <SingleNote toggleSlideSection={toggleSlideSection} />
+      <SingleNote toggleSlideSection={toggleSlideSection} />
     </div>
   );
 }
 
-function SingleNote() {
+function SingleNote({
+  toggleSlideSection,
+}: {
+  toggleSlideSection: () => void;
+}) {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
 
-  // This effect could be replaced with a more complex logic depending on how you manage theme
   useEffect(() => {
     const theme = localStorage.getItem("theme");
     if (theme === "dark") {
       setIsDarkMode(true);
     }
   }, []);
+
   return (
     <div className="max-sm:w-full w-[378px] rounded-md py-4 bg-white shadow-lg dark:bg-black transition-colors duration-300">
-      <NoteHeader />
+      <NoteHeader toggleSlideSection={toggleSlideSection} />
       <NoteDate />
       <NoteTag />
       <NoteDescription />
@@ -52,13 +92,19 @@ function SingleNote() {
   );
 }
 
-function NoteHeader() {
+function NoteHeader({
+  toggleSlideSection,
+}: {
+  toggleSlideSection: () => void;
+}) {
   return (
     <div className="flex justify-between mx-4">
-      <span className="font-bold text-lg w-[87%] text-gray-800 dark:text-white cursor-pointer hover:text-purple dark:hover:text-purple">
+      <span
+        className="font-bold text-lg w-[87%] text-gray-800 dark:text-white cursor-pointer hover:text-purple dark:hover:text-purple"
+        onClick={toggleSlideSection}
+      >
         idhu verum Heading kaga dha
       </span>
-
       <FavoriteBorderIcon className="text-slate-400 cursor-pointer" />
     </div>
   );
@@ -79,8 +125,6 @@ function NoteDate() {
   return (
     <div className="text-slate-500 text-[11px] flex gap-1 font-light mx-4 mt-1">
       <span className="">11th October 2024</span>
-      {/* <span>*</span>
-            <span>31 min ago</span> */}
     </div>
   );
 }
@@ -96,12 +140,12 @@ function NoteDescription() {
   );
 }
 
-interface CodeBlockprops {
+interface CodeBlockProps {
   language: string;
   isDarkMode: boolean;
 }
 
-const CodeBlock: React.FC<CodeBlockprops> = ({ language, isDarkMode }) => {
+const CodeBlock: React.FC<CodeBlockProps> = ({ language, isDarkMode }) => {
   const codeString = `
     import React from 'react';
 
