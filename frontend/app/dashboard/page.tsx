@@ -5,9 +5,7 @@ import ContentArea from "../components/Navbar";
 import { ThemeProvider } from "../provider";
 
 const page = () => {
-  const [openSideBar, setOpenSideBar] = useState(false);
 
-  const toggleSideBar = () => setOpenSideBar(!openSideBar);
   return (
     <div className="flex ">
       <ThemeProvider>
