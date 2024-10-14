@@ -12,14 +12,12 @@ import { useEffect, useState } from "react";
 export default function TagArea() {
   const [isSlideOpen, setIsSlideOpen] = useState(false);
 
-  // Toggle function for opening/closing the sliding section
   const toggleSlideSection = () => {
     setIsSlideOpen(!isSlideOpen);
   };
 
   return (
-    <div className="flex transition-all duration-500">
-      {/* Dashboard Section */}
+    <div className="flex transition-all duration-500 ">
       <div
         className={`transition-all duration-500 ${
           isSlideOpen ? "w-1/2" : "w-full"
@@ -33,12 +31,16 @@ export default function TagArea() {
 
       {/* Sliding Section */}
       {isSlideOpen && (
-        <div className="fixed top-0 right-0 h-full w-1/2 bg-gray-200 shadow-lg p-4 transition-transform transform translate-x-0 z-50">
+        <div className="fixed top-0 right-0 h-full w-1/2 bg-gray-200 shadow-lg p-4 transition-transform transform translate-x-0 z-50 dark:bg-black dark:text-white text-black">
+
           <button
-            className="bg-red-500 text-white px-4 py-2 rounded-md"
+            className="bg-purple text-white px-4 py-1 rounded-md"
             onClick={toggleSlideSection}
           >
-            Close
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="size-8">
+              <path strokeLinecap="round" strokeLinejoin="round" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+            </svg>
+
           </button>
           <div className="p-8">
             <h2 className="text-2xl font-bold mb-4">Sliding Section Content</h2>
