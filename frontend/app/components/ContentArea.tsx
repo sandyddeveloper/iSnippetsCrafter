@@ -116,8 +116,6 @@ const CodeBlock: React.FC<CodeBlockprops> = ({ language, isDarkMode }) => {
       <SyntaxHighlighter
         language={language}
         style={isDarkMode ? atomOneDark : atomOneLight}
-        // style={atomOneDark}
-        // showLineNumbers
         wrapLongLines
       >
         {codeString}
