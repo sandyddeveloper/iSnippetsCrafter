@@ -5,17 +5,15 @@ import { languages, navItems } from "../lib/data";
 
 export default function Sidebar() {
   return (
-    <div 
-      className={`max-md:hidden pr-10 p-6 flex flex-col gap-2  h-full pt-7 dark:bg-black z-50 transition-transform transform`}>
-   
-        <Logo/>
-        <QuickLinks />
-        <Languages />
-      </div>
-  )}
-    
-
-      
+    <div
+      className={`max-md:hidden pr-10 p-6 flex flex-col gap-2  h-full pt-7 dark:bg-black z-50 transition-transform transform`}
+    >
+      <Logo />
+      <QuickLinks />
+      <Languages />
+    </div>
+  );
+}
 
 function Logo() {
   return (

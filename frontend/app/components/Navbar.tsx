@@ -1,7 +1,7 @@
 import SearchIcon from "@mui/icons-material/Search";
 import DarkModeToggle from "./DarkMode";
 import SideBarMenuIcon from "./SideBarMenu";
-import AddIcon from '@mui/icons-material/Add';
+import AddIcon from "@mui/icons-material/Add";
 import { useState } from "react";
 import TagArea from "./ContentArea";
 
@@ -24,7 +24,10 @@ function Topbar() {
       <SearchBar />
       <div className="flex gap-4 items-center">
         <DarkModeToggle />
-        <SideBarMenuIcon openSideBar={openSideBar} toggleSideBar={toggleSideBar} />
+        <SideBarMenuIcon
+          openSideBar={openSideBar}
+          toggleSideBar={toggleSideBar}
+        />
       </div>
     </div>
   );
@@ -90,7 +93,6 @@ function SearchBar() {
         <AddIcon sx={{ fontSize: 26 }} />
         <div className="max-md:hidden text-[15px] items-center">Snippet</div>
       </div>
-      
     );
   }
 }

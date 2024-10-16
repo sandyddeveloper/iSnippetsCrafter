@@ -1,4 +1,4 @@
-"use client"; 
+"use client";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 
