@@ -139,6 +139,7 @@ export default function TagArea() {
 
 function AllNotesSection({ toggleSlideSection }: { toggleSlideSection: () => void }) {
   const notes = Array(5).fill(null);
+  
 
   return (
     <div className="mt-5 flex flex-wrap gap-4 dark:bg-gray-800 p-3 transition-colors duration-300">
@@ -207,7 +208,7 @@ function NoteTags({ tags }: { tags: string[] }) {
 function NoteDate({ creationDate }: { creationDate: string }) {
   return (
     <div className="text-slate-500 text-[11px] flex gap-1 font-light mx-4 mt-1">
-      <span className="">{creationDate}</span>
+      <span>{creationDate}</span>
     </div>
   );
 }
@@ -223,9 +224,10 @@ function NoteDescription({ description }: { description: string }) {
 interface CodeBlockProps {
   language: string;
   isDarkMode: boolean;
+  code : string;
 }
 
-function CodeBlock({ language, code, isDarkMode }: { language: string; code: string; isDarkMode: boolean }) {
+const CodeBlock : React.FC<CodeBlockProps> = ({ language, code, isDarkMode }) => {
   return (
     <div className="rounded-lg mx-4 mt-4 pb-1">
       <SyntaxHighlighter
@@ -242,6 +244,8 @@ function CodeBlock({ language, code, isDarkMode }: { language: string; code: str
     </div>
   );
 };
+
+
 
 
 function NoteFooter({ language }: { language: string }) {
